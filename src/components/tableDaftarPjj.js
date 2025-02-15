@@ -105,9 +105,23 @@ const DaftarPJJ = () => {
 
   return (
     <div style={{ maxWidth: 800, margin: "auto", padding: 20, textAlign: "center" }}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
-        <img src='./logo.jpg' alt="Logo" style={{ width: 50, height: 50, marginRight: 10 }} />
-        <h2 style={{ fontSize: isMobile ? "1.2em" : "1.5em", fontWeight: "bold", color: "#333" }}>DAFTAR IBADAH PJJ - 2025</h2>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: 20,
+          flexDirection: isMobile ? "column" : "row",
+        }}
+      >
+        <img
+          src="./logo.jpg"
+          alt="Logo"
+          style={{ width: isMobile ? 40 : 50, height: isMobile ? 40 : 50, marginBottom: isMobile ? 10 : 0, marginRight: isMobile ? 0 : 10 }}
+        />
+        <h2 style={{ fontSize: isMobile ? "1.2em" : "1.5em", fontWeight: "bold", color: "#333" }}>
+          DAFTAR IBADAH PJJ - 2025
+        </h2>
       </div>
 
       <Search
@@ -121,9 +135,10 @@ const DaftarPJJ = () => {
       <Table
         dataSource={filteredData}
         columns={columns}
-        bordered
+        pagination={{ pageSize: isMobile ? 5 : 10 }}
+        scroll={{ x: isMobile ? true : false }}
         rowKey="no"
-        pagination={{ pageSize: 5 }}
+        size={isMobile ? "small" : "middle"}
       />
 
       {/* Footer */}
