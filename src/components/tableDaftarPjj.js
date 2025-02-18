@@ -82,18 +82,18 @@ const DaftarPJJ = () => {
       title: "Alamat",
       dataIndex: "alamat",
       key: "alamat",
-      render: (text) => (
-        <a
-          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-            text
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "blue", textDecoration: "underline" }}
-        >
-          {text}
-        </a>
-      ),
+      // render: (text) => (
+      //   <a
+      //     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      //       text
+      //     )}`}
+      //     target="_blank"
+      //     rel="noopener noreferrer"
+      //     style={{ color: "blue", textDecoration: "underline" }}
+      //   >
+      //     {text}
+      //   </a>
+      // ),
     },
     { title: "Pengkhotbah", dataIndex: "pengkhotbah", key: "pengkhotbah" },
     {
